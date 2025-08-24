@@ -36,6 +36,11 @@
 
 #include "Grove_LED_Bar.h"
 
+#ifdef ARDUINO_NANO_ESP32
+inline int max(int a,int b) {return ((a)>(b)?(a):(b)); }
+inline int min(int a,int b) {return ((a)>(b)?(b):(a)); }
+#endif
+
 enum LedState {
     LED_TURN_OFF,
     LED_FULL_BRIGHTNESS = 0xFF,
